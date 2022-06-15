@@ -13,9 +13,7 @@ var stripePromise;
   stripePromise = loadStripe(foobar);
 })();
 
-
-
-const Checkout = ({ name }) => {
+const Checkout = () => {
   const [clientSecretSettings, setclientSecretSettings] = useState({
     clientSecret: "",
     loading: true,
@@ -50,6 +48,7 @@ const Checkout = ({ name }) => {
         </Elements>
       )}
     </div>
-  );};
+  );
+};
 
 export default Checkout;
