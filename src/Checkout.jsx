@@ -4,17 +4,17 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from './CheckoutForm.jsx';
 
-var stripePromise;
-
-(async () => {
+const initStripe = async () => {
   const res = await axios.get("/api/publishable-key");
-  const foobar = await res.data.publishable_key;
+  const publishableKey = await res.data.publishable_key;
 
-  stripePromise = loadStripe(foobar);
-})();
+  return loadStripe(publishableKey);
+};
 
 const Checkout = () => {
-  const [clientSecretSettings, setclientSecretSettings] = useState({
+  const stripePromise = initStripe();
+
+  const [clientSecretSettings, setClientSecretSettings] = useState({
     clientSecret: "",
     loading: true,
   });
@@ -23,7 +23,7 @@ const Checkout = () => {
     async function createPaymentIntent() {
       const response = await axios.post("/api/create-payment-intent", {});
 
-      setclientSecretSettings({
+      setClientSecretSettings({
         clientSecret: response.data.client_secret,
         loading: false,
       });
