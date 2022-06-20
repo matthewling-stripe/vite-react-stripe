@@ -14,7 +14,9 @@ fastify.post("/create-payment-intent", async () => {
   const paymentIntent = await stripe.paymentIntents.create({
     amount: 1099,
     currency: "eur",
-    payment_method_types: ["bancontact", "card"],
+    automatic_payment_methods: {
+      enabled: true
+    },
   });
 
   return { client_secret: paymentIntent.client_secret };
