@@ -39,6 +39,18 @@ http://localhost:4242
 
 [https://stripe.com/docs/testing](https://stripe.com/docs/testing)
 
-## End to end tutorial on dev.to
+## End to end tutorials on dev.to
 
-TODO
+1. https://dev.to/stripe/accept-a-payment-with-vite-react-stripe-and-the-payment-element-4p1b
+1. https://dev.to/stripe/automatic-payment-methods-with-the-stripe-payment-element-2o6k
+1. https://dev.to/stripe/styling-a-payments-page-with-tailwind-css-1li1
+
+
+## Branches
+
+* Accept a payment: main
+* Automatic payment methods: 02-automatic-payment-methods
+* Styling with Tailwind CSS: 03-styling-with-tailwind-css
+
+
+
